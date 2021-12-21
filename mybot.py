@@ -22,3 +22,4 @@ def handle_text(message):
             bot.send_photo(message.chat.id, photo)
     bot.send_message(message.chat.id, "Хорошего дня!")
 bot.polling(none_stop=True, interval=0)
+
