@@ -9,7 +9,7 @@ def start(m, res=False):
         item2=telebot.types.KeyboardButton("Кошечка")
         markup.add(item1)
         markup.add(item2)
-        bot.send_message(m.chat.id, "Как твое настроение? Надеюсь хорошо. Чтобы стало еще лучше я покажу тебе милое фото\n")
+        bot.send_message(m.chat.id, "Как твое настроение? Надеюсь хорошо. Чтобы стало еще лучше, я покажу тебе милое фото\n")
         bot.send_message(m.chat.id, 'Нажми "собачка", чтобы получить фото собачки или "кошечка", чтобы получить фото кошечки',  reply_markup=markup)
 
 @bot.message_handler(content_types=["text"])
