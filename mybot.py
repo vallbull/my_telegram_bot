@@ -1,8 +1,9 @@
 '''my first bot'''
 
+import os
 import telebot
 
-bot = telebot.TeleBot("5023155853:AAGGj1lPuILWqrK-1H_EUp0i5zUt1EUvPBY")
+bot = telebot.TeleBot(os.environ.get("TELEGRAM_BOT_TOKEN"))
 
 @bot.message_handler(commands=["start"])
 def start(message):
