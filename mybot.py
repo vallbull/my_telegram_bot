@@ -13,10 +13,12 @@ def start(message):
     item2=telebot.types.KeyboardButton("Кошечка")
     markup.add(item1)
     markup.add(item2)
-    bot.send_message(message.chat.id, "Как твое настроение? Надеюсь, хорошо. \
-        Чтобы стало еще лучше, я покажу тебе милое фото\n")
-    bot.send_message(message.chat.id, 'Нажми "собачка", чтобы получить фото собачки,\
-        или "кошечка", чтобы получить фото кошечки',  reply_markup=markup)
+    welcome_word = "Как твое настроение? Надеюсь, хорошо." +\
+        "Чтобы стало еще лучше, я покажу тебе милое фото\n"
+    bot.send_message(message.chat.id, welcome_word)
+    welcome_word = 'Нажми "собачка", чтобы получить фото собачки,' +\
+        'или "кошечка", чтобы получить фото кошечки'
+    bot.send_message(message.chat.id, welcome_word,  reply_markup=markup)
 
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
