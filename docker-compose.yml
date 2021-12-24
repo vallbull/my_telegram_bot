@@ -6,7 +6,7 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.scope=myscope"
     environment:
-      TELEGRAM_BOT_TOKEN: "5023155853:AAGu7sm2NGKO61sqI7EPhDC8brTWgFSnF30"
+      TELEGRAM_BOT_TOKEN: "${BOT_TOKEN}"
 
   watchtower:
     image: containrrr/watchtower
