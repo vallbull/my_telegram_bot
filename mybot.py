@@ -5,7 +5,7 @@ import telebot
 
 bot = telebot.TeleBot(os.environ.get("TELEGRAM_BOT_TOKEN"))
 
-@bot.message_handler(commands=["start"])
+@bot.message_handler(commands=["start", "help"])
 def start(message):
     '''Add keyboar with two buttons and create question'''
     markup=telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -17,7 +17,7 @@ def start(message):
         " Чтобы стало еще лучше, я покажу тебе милое фото\n"
     bot.send_message(message.chat.id, welcome_word)
     welcome_word = 'Нажми "собачка", чтобы получить фото собачки,' +\
-        'или "кошечка", чтобы получить фото кошечки'
+        ' или "кошечка", чтобы получить фото кошечки'
     bot.send_message(message.chat.id, welcome_word,  reply_markup=markup)
 
 @bot.message_handler(content_types=["text"])
